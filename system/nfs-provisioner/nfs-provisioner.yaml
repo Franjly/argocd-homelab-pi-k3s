@@ -11,7 +11,7 @@ spec:
   project: nfs-provisioner
   source:
     path: system/nfs-provisioner/application
-    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    repoURL: https://github.com/Franjly/argocd-homelab-pi-k3s.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}

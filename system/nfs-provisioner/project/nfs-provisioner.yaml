@@ -20,3 +20,4 @@ spec:
     kind: '*'
   sourceRepos:
   - https://github.com/Franjly/homelab-pi-k3s.git
+  - https://github.com/Franjly/argocd-homelab-pi-k3s.git
