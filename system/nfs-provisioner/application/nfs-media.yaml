@@ -6,9 +6,9 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: arr
+    namespace: nfs-provisioner
     server: https://kubernetes.default.svc
-  project: arr
+  project: nfs-provisioner
   source:
     path: system/nfs-provisioner/nfs-media
     plugin:
