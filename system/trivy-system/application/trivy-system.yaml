@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trivy-system
+  namespace: argocd
+spec:
+  destination:
+    namespace: trivy-system
+    server: https://kubernetes.default.svc
+  project: trivy-system
+  source:
+    path: system/trivy-system
+    plugin:
+      name: vault-kustomized-helm
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
