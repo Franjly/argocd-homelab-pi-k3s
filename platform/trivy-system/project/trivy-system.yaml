@@ -10,6 +10,9 @@ spec:
     kind: '*'
   destinations:
   - name: in-cluster
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  - name: in-cluster
     namespace: trivy-system
     server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
@@ -17,3 +20,4 @@ spec:
     kind: '*'
   sourceRepos:
   - https://github.com/Franjly/homelab-pi-k3s.git
+  - https://github.com/Franjly/argocd-homelab-pi-k3s.git
