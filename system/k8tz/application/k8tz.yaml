@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8tz
+  namespace: argocd
+spec:
+  destination:
+    namespace: k8tz
+    server: https://kubernetes.default.svc
+  project: k8tz
+  source:
+    path: system/k8tz
+    plugin:
+      name: kustomized-helm
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

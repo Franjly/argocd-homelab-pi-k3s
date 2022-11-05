@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: arr
+  name: argocd
   namespace: argocd
 spec:
   clusterResourceWhitelist:
@@ -12,12 +12,8 @@ spec:
   - name: in-cluster
     namespace: argocd
     server: https://kubernetes.default.svc
-  - name: in-cluster
-    namespace: arr
-    server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
   - group: '*'
     kind: '*'
   sourceRepos:
   - https://github.com/Franjly/homelab-pi-k3s.git
-  - https://github.com/Franjly/argocd-homelab-pi-k3s.git

@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  name: unifi-poller
+  namespace: argocd
+spec:
+  destination:
+    namespace: monitoring-system
+    server: https://kubernetes.default.svc
+  project: monitoring-system
+  source:
+    path: system/monitoring-system/unifi-poller
+    plugin:
+      name: vault-kustomized-helm
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

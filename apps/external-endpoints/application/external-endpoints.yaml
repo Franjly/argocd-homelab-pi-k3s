@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-endpoints
+  namespace: argocd
+spec:
+  destination:
+    namespace: external-endpoints
+    server: https://kubernetes.default.svc
+  project: external-endpoints
+  source:
+    path: apps/external-endpoints
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

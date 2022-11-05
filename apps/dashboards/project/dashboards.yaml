@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: arr
+  name: dashboards
   namespace: argocd
 spec:
   clusterResourceWhitelist:
@@ -13,7 +13,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   - name: in-cluster
-    namespace: arr
+    namespace: dashboards
     server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
   - group: '*'

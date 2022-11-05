@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: calico-metrics
+  namespace: argocd
+spec:
+  destination:
+    namespace: calico-system
+    server: https://kubernetes.default.svc
+  project: calico-metrics
+  source:
+    path: system/calico-metrics
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
