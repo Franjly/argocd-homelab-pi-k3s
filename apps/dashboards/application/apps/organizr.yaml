@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: organizr
+  namespace: argocd
+spec:
+  destination:
+    namespace: dashboards
+    server: https://kubernetes.default.svc
+  project: dashboards
+  source:
+    path: apps/dashboards/organizr
+    plugin:
+      name: vault-kustomized-helm
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
