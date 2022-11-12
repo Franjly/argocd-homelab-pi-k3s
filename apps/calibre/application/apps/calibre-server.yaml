@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: calibre
   source:
-    path: apps/calibre/calibre
+    path: apps/calibre/calibre-server
     plugin:
       name: vault-kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
