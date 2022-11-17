@@ -19,3 +19,9 @@ spec:
     automated: {}
     syncOptions:
     - CreateNamespace=true
+  ignoreDifferences:
+    - kind: Secret
+      name: gitea-postgresql
+      jsonPointers:
+        - /data/postgresql-password
+        - /data/postgresql-postgres-password
