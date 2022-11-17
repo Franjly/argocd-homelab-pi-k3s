@@ -24,9 +24,13 @@ spec:
       kind: MutatingWebhookConfiguration
       jqPathExpressions:
         - '.webhooks[]?.clientConfig.caBundle'
-    - group: ''
-      kind: Secret
+    - kind: Secret
       name: k8tz-tls
       jsonPointers:
         - /data/tls.crt
         - /data/tls.key
+    - group: apps
+      kind: Deployment
+      name: k8tz
+      jqPathExpressions:
+        - '.spec.template.metadata.annotations."checksum/config"'
