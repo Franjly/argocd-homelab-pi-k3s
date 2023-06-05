@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflare
+  namespace: argocd
+spec:
+  destination:
+    namespace: cloudflare
+    server: https://kubernetes.default.svc
+  project: cloudflare
+  source:
+    path: system/cloudflare
+    plugin:
+      name: argocd-vault-plugin
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
