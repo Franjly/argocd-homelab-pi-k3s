@@ -12,7 +12,7 @@ spec:
   source:
     path: system/cloudflare
     plugin:
-      name: argocd-vault-plugin
+      name: vault-kustomized
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: HEAD
   syncPolicy:
