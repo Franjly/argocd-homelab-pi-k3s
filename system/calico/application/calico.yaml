@@ -12,7 +12,7 @@ spec:
   source:
     path: system/calico
     plugin:
-      name: kustomized-helm
+      name: kustomized-helm-v1.0
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: feature/upgrade-apps
   syncPolicy:
