@@ -11,6 +11,8 @@ spec:
   project: calico-metrics
   source:
     path: system/calico-metrics
+    plugin:
+      name: vault-kustomized
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: feature/upgrade-apps
   syncPolicy:
