@@ -12,7 +12,7 @@ spec:
   source:
     path: system/monitoring-system/application/apps
     repoURL: https://github.com/Franjly/argocd-homelab-pi-k3s.git
-    targetRevision: HEAD
+    targetRevision: feature/upgrade-apps
   syncPolicy:
     automated: {}
     syncOptions:
