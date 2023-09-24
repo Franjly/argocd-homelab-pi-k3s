@@ -11,8 +11,10 @@ spec:
   project: external-endpoints
   source:
     path: apps/external-endpoints
+    plugin:
+      name: vault-kustomized
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
-    targetRevision: HEAD
+    targetRevision: feature/upgrade-apps
   syncPolicy:
     automated: {}
     syncOptions:
