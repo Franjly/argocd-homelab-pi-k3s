@@ -12,7 +12,7 @@ spec:
   source:
     path: platform/tekton
     plugin:
-      name: vault-kustomized-helm
+      name: vault-kustomized
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: feature/upgrade-apps
   syncPolicy:
