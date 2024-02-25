@@ -13,6 +13,9 @@ spec:
     path: platform/argocd
     plugin:
       name: vault-kustomized-helm
+      env:
+        - name: EXTRA_ARGS
+          value: "--api-versions monitoring.coreos.com/v1"
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: feature/upgrade-apps
   syncPolicy:
