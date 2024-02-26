@@ -15,9 +15,6 @@ spec:
       name: vault-kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: feature/upgrade-apps
-  ignoreDifferences:
-    - group: velero.io
-      kind: Backup
   syncPolicy:
     automated: {}
     syncOptions:
