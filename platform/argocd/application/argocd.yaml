@@ -17,7 +17,7 @@ spec:
         - name: EXTRA_ARGS
           value: "--api-versions monitoring.coreos.com/v1"
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
-    targetRevision: feature/upgrade-apps
+    targetRevision: feature/upgrade-apps-2024
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

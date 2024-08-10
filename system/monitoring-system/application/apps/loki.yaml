@@ -16,7 +16,7 @@
 #     plugin:
 #       name: vault-kustomized-helm
 #     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
-#     targetRevision: feature/upgrade-apps
+#     targetRevision: feature/upgrade-apps-2024
 #   syncPolicy:
 #     automated: {}
 #     syncOptions:
