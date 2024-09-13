@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: calibre-server
+  name: requestrr
   namespace: argocd
 spec:
   destination:
-    namespace: calibre
+    namespace: arr
     server: https://kubernetes.default.svc
-  project: calibre
+  project: arr
   source:
-    path: apps/calibre/calibre-server
+    path: apps/arr/requestrr
     plugin:
       name: vault-kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
@@ -19,3 +19,9 @@ spec:
     automated: {}
     syncOptions:
     - CreateNamespace=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      name: requestrr
+      jqPathExpressions:
+        - '.spec.template.spec.hostUsers'

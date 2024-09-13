@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: monitoring-system
+  name: tekton
   namespace: argocd
 spec:
   clusterResourceWhitelist:
@@ -10,17 +10,13 @@ spec:
     kind: '*'
   destinations:
   - name: in-cluster
-    namespace: argocd
+    namespace: tekton-pipelines
     server: https://kubernetes.default.svc
   - name: in-cluster
-    namespace: monitoring-system
-    server: https://kubernetes.default.svc
-  - name: in-cluster
-    namespace: kube-system
+    namespace: tekton-pipelines-resolvers
     server: https://kubernetes.default.svc
   namespaceResourceWhitelist:
   - group: '*'
     kind: '*'
   sourceRepos:
   - https://github.com/Franjly/homelab-pi-k3s.git
-  - https://github.com/Franjly/argocd-homelab-pi-k3s.git

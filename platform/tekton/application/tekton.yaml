@@ -2,25 +2,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vault
+  name: tekton
   namespace: argocd
 spec:
   destination:
-    namespace: vault
+    namespace: tekton-pipelines
     server: https://kubernetes.default.svc
-  project: vault
+  project: tekton
   source:
-    path: platform/vault
+    path: platform/tekton
     plugin:
-      name: kustomized-helm
+      name: vault-kustomized
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: main
   syncPolicy:
     automated: {}
     syncOptions:
     - CreateNamespace=true
-  ignoreDifferences:
-    - group: admissionregistration.k8s.io
-      kind: MutatingWebhookConfiguration
-      jqPathExpressions:
-        - '.webhooks[]?.clientConfig.caBundle'

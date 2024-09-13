@@ -16,7 +16,7 @@ spec:
     plugin:
       name: vault-kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
-    targetRevision: HEAD
+    targetRevision: main
   ignoreDifferences:
     - group: admissionregistration.k8s.io
       kind: '*'
@@ -26,3 +26,4 @@ spec:
     automated: {}
     syncOptions:
     - CreateNamespace=true
+    - ServerSideApply=true

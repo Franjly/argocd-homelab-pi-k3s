@@ -12,7 +12,7 @@ spec:
   source:
     path: apps/calibre/application/apps
     repoURL: https://github.com/Franjly/argocd-homelab-pi-k3s.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated: {}
     syncOptions:

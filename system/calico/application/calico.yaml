@@ -14,8 +14,9 @@ spec:
     plugin:
       name: kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated: {}
     syncOptions:
     - CreateNamespace=true
+    - ServerSideApply=true
