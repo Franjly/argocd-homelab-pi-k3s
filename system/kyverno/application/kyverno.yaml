@@ -11,14 +11,9 @@ spec:
   project: kyverno
   source:
     path: system/kyverno/application/apps
-    plugin:
-      name: vault-kustomized-helm
     repoURL: https://github.com/Franjly/argocd-homelab-pi-k3s.git
     targetRevision: main
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated: {}
     syncOptions:
       - CreateNamespace=true
-      - Replace=true
