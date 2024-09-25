@@ -24,6 +24,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - Replace=true
+      - ServerSideApply=true
   ignoreDifferences:
     - group: rbac.authorization.k8s.io
       kind: ClusterRole
