@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: istio-system
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - name: in-cluster
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  - name: in-cluster
+    namespace: istio-system
+    server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  sourceRepos:
+  - https://github.com/Franjly/homelab-pi-k3s.git
+  - https://github.com/Franjly/argocd-homelab-pi-k3s.git
