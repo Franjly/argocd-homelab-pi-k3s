@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nfs-roms
+  namespace: argocd
+spec:
+  destination:
+    namespace: nfs-provisioner
+    server: https://kubernetes.default.svc
+  project: nfs-provisioner
+  source:
+    path: system/nfs-provisioner/nfs-roms
+    plugin:
+      name: vault-kustomized-helm
+    repoURL: https://github.com/Franjly/homelab-pi-k3s.git
+    targetRevision: main
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
