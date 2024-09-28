@@ -19,3 +19,12 @@ spec:
     automated: {}
     syncOptions:
     - CreateNamespace=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jqPathExpressions:
+        - '.spec.template.spec.hostUsers'
+    - group: apps
+      kind: StatefulSet
+      jqPathExpressions:
+        - '.spec.template.spec.hostUsers'
