@@ -24,7 +24,17 @@ spec:
       kind: Deployment
       jqPathExpressions:
         - '.spec.template.spec.hostUsers'
+        - '.spec.template.metadata.annotations'
     - group: apps
       kind: StatefulSet
       jqPathExpressions:
         - '.spec.template.spec.hostUsers'
+    - group: networking.k8s.io
+      kind: Ingress
+      name: romm
+      jqPathExpressions:
+        - '.metadata.annotations'
+    - kind: Secret
+      name: romm-romm-secrets
+      jsonPointers:
+        - /data/ROMM_AUTH_SECRET_KEY
