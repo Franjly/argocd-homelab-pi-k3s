@@ -11,8 +11,6 @@ spec:
   project: calico
   source:
     path: system/calico
-    plugin:
-      name: kustomized-helm
     repoURL: https://github.com/Franjly/homelab-pi-k3s.git
     targetRevision: main
   syncPolicy:
