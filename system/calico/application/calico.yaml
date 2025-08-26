@@ -18,3 +18,9 @@ spec:
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
+  ignoreDifferences:
+    - group: operator.tigera.io
+      kind: Installation
+      jqPathExpressions:
+        - '.spec.calicoNetwork.ipPools[]?.assignmentMode'
+        - '.spec.calicoNetwork.ipPools[]?.disableNewAllocations'
